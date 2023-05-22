@@ -5,7 +5,8 @@ const InternData = new Schema({
   about: { type: String, required: true },
   field: { type: String, required: true },
   role: { type: String, required: true },
-  owner: { type: Types.ObjectId, ref: "Intern" },
+  likedJobOffers: [{ type: Types.ObjectId, ref: "JobOffer", default: [] }],
+  owner: { type: Types.ObjectId, ref: "User" },
 });
 
 module.exports = model("InternData", InternData);
